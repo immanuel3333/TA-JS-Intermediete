@@ -1,0 +1,58 @@
+<!--
+    Soal - 02
+Kamu adalah seorang programmer yang bekerja pada sebuah perusahaan keamanan, kamu diminta untuk melakukan validasi terhadap sistem registrasi pelanggan, berikut merupakan langakah-langkah yang dapat kamu ambil untuk menyelesaikan tugasmu:
+
+menggambil data dari inputan user baik itu "email" ataupun "password"
+kriteria password yang diharapkan adalah
+mengandung huruf besar dan kecil
+mengandung angka
+mengandung simbol (!@#$%^&*)
+minimal 8 karakter
+melakukan pengecekan apakah email tersebut sudah sesuai dengan ketentuan atau tidak, yang mana akan memapilkan alert dengan pesan jika:
+SESUAI - melanjutkan ketahap selanjutnya yaitu validasi password
+TIDAK SESUAI - tolong masukan email yang valid
+melakukan pengecekan apakah password tersebut sudah sesuai dengan ketentuan atau tidak, yang mana akan memapilkan alert dengan pesan jika:
+SESUAI - Welcome to The Jungle
+TIDAK SESUAI - tolong masukan password sesuai ketentuan
+setelah alert ditampilkan, maka hapus password dari input field
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Regex and DOM - 01</title>
+  </head>
+  <body>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" />
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" />
+    <button id="btn-submit" style="display: block; margin-top: 10px">
+      submit
+    </button>
+
+    <script>
+      // EDIT DOWN HERE
+      const elInputEmail = document.querySelector("#email");
+      const elInputPassword = document.querySelector("#password");
+      const elBtnSubmit = document.querySelector("#btn-submit");
+      const emailValidator = new RegExp(/^\S+@\S+\.\S+$/);
+      const passwordValidator = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})")
+      elBtnSubmit.addEventListener("click", function(e) {
+        e.preventDefault();
+        if (emailValidator.test(elInputEmail.value)) {
+          if(passwordValidator.test(elInputPassword.value)){
+            alert("Welcome to The Jungle");
+          } else {
+            alert("tolong masukan password sesuai dengan ketentuan");
+          }
+        } else {
+          alert("tolong masukan email yang valid");
+        }
+      })
+    </script>
+  </body>
+</html>

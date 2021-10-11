@@ -1,0 +1,6 @@
+1. Apa itu localStorage
+localStorage adalah tempat pada browser dalam menyimpan data. Data tidak akan hilang walaupun browser di close dan komputer direstart.
+2. Apa itu cookies
+Cookies adalah kumpulan data yang diterima komputer dari sebuah situs dan mengirimkan kembali ke situs yang dikunjungi
+3. Apa perbedaan antara localStorage dan SessionStorage
+localStorage menyimpan informasi selama pengguna tidak menghapusnya, sedangkan SessionStorage menyimpan informasi selama sesi berlangsung. biasanya sampai pengguna menutup tab browser
